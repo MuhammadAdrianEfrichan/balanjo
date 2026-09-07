@@ -1,12 +1,14 @@
 import Navbar from "../../components/Navbar"
+import Footer from "../../components/sections/Footer"
 import Hero from "../../components/sections/Hero"
+import Menu from "../../components/sections/Menu"
 
 const Home =()=>{
     return <>
-    <div className="h-10000">
     <Navbar />
     <Hero />
-    </div>
+    <Menu />
+    <Footer />
     </>
 }
 

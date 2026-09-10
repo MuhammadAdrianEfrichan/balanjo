@@ -4,8 +4,8 @@ const navItems = ["Home", "Forum", "Blog", "E-Commerce", "Login"];
 
 const Footer = () => {
   return (
-        <footer className="w-full py-7 text-[#3d3d3d]">
-        <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-10">
+        <footer className="w-full py-6 text-[#3d3d3d] px-[97.32px] pb-20">
+        <div className="mx-auto px-3 sm:px-6 lg:px-10">
             <div className="flex flex-col gap-5 border-b border-[#cfcfcf] pb-6 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-3">
                 <img src={logoFooter} alt="Balanjo logo"/>

@@ -1,3 +1,4 @@
+import Forum from "../pages/Forum";
 import GetStarted from "../pages/GetStarted";
 import Home from "../pages/Home/Home";
 
@@ -11,8 +12,8 @@ const routes =[
         element :<GetStarted />
     },
     {
-        path : '/',
-        element :<Home />
+        path : '/forum',
+        element :<Forum />
     },
 ]
 

@@ -4,7 +4,7 @@ import belanjaWhite from "../../assets/navbar/belanjaWhite.svg"
 import belanjaBlack from "../../assets/navbar/belanjaBlack.svg"
 import Button from "../ui/Button"
 import { useState, useEffect } from 'react';
-import { useLocation } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -31,13 +31,15 @@ const Navbar = () => {
         >
             <nav className="w-full h-33 px-14.75 flex items-center justify-between">
                 <div className="flex gap-30">
-                    <img src={isTransparent ? logoWhite : logoCoklat} alt="logo" />
+                    <Link to="/">
+                        <img src={isTransparent ? logoWhite : logoCoklat} alt="logo" />
+                    </Link>
                     <ul
                         className={`flex justify-between items-center w-91.25 font-medium text-[18px] transition-colors duration-300
                             ${isTransparent ? 'text-white' : 'text-black'}`}
                     >
-                        <li>Home</li>
-                        <li>Forum</li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/forum">Forum</Link></li>
                         <li>Blog</li>
                         <li>E-Commerce</li>
                     </ul>

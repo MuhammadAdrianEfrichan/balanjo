@@ -1,9 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = (props)=>{
     const {category,label, ket, to }= props;
+     const location = useLocation()
+
+    const alwaysHeaderPages = ["/get-started"]
+    const isHeaderLike = alwaysHeaderPages.includes(location.pathname)
+
+    // transparan HANYA kalau di halaman home DAN belum discroll
+    const isHeader = isHeaderLike 
     return (
-        <div className="flex  h-36.5 flex-col gap-3 my-22.5">
+        <div className={` ${isHeader ? "flex  h-36.5 flex-col gap-3 my-22.5" : "hidden"}`}>
         <h2 className="text-[16px] font-medium mb-3">{category}</h2>
         <h1 className="text-[35px] font-bold text-button">{label}</h1>
         <div className="flex justify-between">

@@ -4,11 +4,12 @@ import belanjaWhite from "../../assets/navbar/belanjaWhite.svg"
 import belanjaBlack from "../../assets/navbar/belanjaBlack.svg"
 import Button from "../ui/Button"
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation()
+    const navigate = useNavigate()
 
     const alwaysTransparentPages = ["/"]
     const isHomeLike = alwaysTransparentPages.includes(location.pathname)
@@ -45,15 +46,17 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex gap-20">
-                    <img src={isTransparent ? belanjaWhite : belanjaBlack} alt="" />
+                    <Link to="/E-Commerce" aria-label="Buka E-Commerce">
+                        <img src={isTransparent ? belanjaWhite : belanjaBlack} alt="" />
+                    </Link>
                     <div className="flex justify-center items-center gap-5">
-                        <a href="#"
+                        <Link to="/login"
                             className={`text-[18px] font-normal transition-colors duration-300
                                 ${isTransparent ? 'text-white' : 'text-button'}`}
                         >
                             Log in
-                        </a>
-                        <Button className="w-29.75 h-12.25">Sign up</Button>
+                        </Link>
+                        <Button onClick={() => navigate("/register")} className="w-29.75 h-12.25">Sign up</Button>
                     </div>
                 </div>
             </nav>

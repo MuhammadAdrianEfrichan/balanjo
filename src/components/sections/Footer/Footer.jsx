@@ -1,6 +1,12 @@
 import logoFooter from "../../../assets/footer/logoFooter.svg";
+import { Link } from "react-router-dom";
 
-const navItems = ["Home", "Forum", "Blog", "E-Commerce", "Login"];
+const navItems = [
+    ["Home", "/"],
+    ["Forum", "/forum"],
+    ["Blog", "/blog"],
+    ["E-Commerce", "/E-Commerce"],
+];
 
 const Footer = () => {
   return (
@@ -16,12 +22,9 @@ const Footer = () => {
 
             <nav aria-label="Footer navigation">
                 <ul className="flex flex-wrap items-center justify-end gap-x-8 gap-y-2 text-[15px] font-normal tracking-[-0.02em] text-[#4a4a4a]">
-                {navItems.map((item) => (
-                    <li
-                    key={item}
-                    className="cursor-pointer transition-colors hover:text-[#1b1b1b]"
-                    >
-                    {item}
+                {navItems.map(([label, path]) => (
+                    <li key={label} className="transition-colors hover:text-[#1b1b1b]">
+                    <Link to={path}>{label}</Link>
                     </li>
                 ))}
                 </ul>

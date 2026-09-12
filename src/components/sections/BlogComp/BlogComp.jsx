@@ -39,7 +39,7 @@ const BlogComp = ()=>{
             label ="Temukan Inspirasi Karya Rangers"
             ket ="Tempat di mana ide-ide segar bertemu dengan pengetahuan mendalam
                     untuk membantu mengembangkan bisnis kamu"
-            to='/'
+            to='/blog'
         />
         
         <div className="flex gap-20 items-center justify-center">

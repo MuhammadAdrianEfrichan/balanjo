@@ -2,6 +2,7 @@ import forum from "../../../assets/homeIcon/forum.svg"
 import eCommerce from "../../../assets/homeIcon/eCommerce.svg"
 import blog from "../../../assets/homeIcon/blog.svg"
 import Button from "../../ui/Button"
+import { useNavigate } from "react-router-dom"
 
 const cart =[
     {
@@ -26,6 +27,13 @@ const cart =[
 
 
 const Menu = ()=>{
+    const navigate = useNavigate()
+    const routes = {
+        Forum: "/forum",
+        Blog: "/blog",
+        "E-Commerce": "/E-Commerce",
+    }
+
     return (
         <section className="mx-auto px-14.75 my-27.25 flex flex-col items-center gap-2">
             <h3 className="text-[18px] text-abu font-medium">What we do</h3>
@@ -35,7 +43,7 @@ const Menu = ()=>{
                     return <div className="flex flex-col justify-center items-center p-10 w-88 h-111 bg-white rounded-2xl gap-9 shadow-xl" key={item.id}>
                     <img src={item.icon} alt={item.label} />
                     <p className="text-center text-[18px] font-normal">{item.ket}</p>
-                    <Button className="w-40.5 h-12.25">Selengkapnya</Button>
+                    <Button onClick={() => navigate(routes[item.label])} className="w-40.5 h-12.25">Selengkapnya</Button>
                 </div>
                 })}
                 

@@ -12,6 +12,7 @@ import listrik from "../../assets/ECommerce/listrik.svg"
 import pulsa from "../../assets/ECommerce/pulsa.svg"
 import jasa from "../../assets/ECommerce/jasa.svg"
 import obatObatan from "../../assets/ECommerce/obatObatan.svg"
+import { useNavigate } from "react-router-dom"
 
 const categories = [
     [makanan, "Makanan"],
@@ -25,6 +26,9 @@ const categories = [
 ]
 
 const ECommerce = () => {
+
+    const navigate = useNavigate();
+
     return <>
         <Navbar />
         <main className="mx-auto w-full max-w-[1720px] px-5 pb-20 pt-[196.17px] sm:px-8 lg:px-[6.5vw]">
@@ -37,7 +41,7 @@ const ECommerce = () => {
 
             <div className="mt-12 grid grid-cols-4 gap-3 rounded-lg bg-white px-4 py-4 sm:grid-cols-8 sm:gap-5 sm:px-8">
                 {categories.map(([icon, label]) => (
-                    <button className="flex min-w-0 flex-col items-center gap-1 text-[18px]" key={label} type="button">
+                    <button className="flex min-w-0 flex-col items-center gap-1 text-[18px] cursor-pointer" key={label} type="button" onClick={() => navigate(`/detail-category?category=${encodeURIComponent(label)}`)}>
                         <span className="flex h-14 w-14 items-center justify-center rounded-md bg-button sm:h-20 sm:w-20">
                             <img className="h-9 w-9 sm:h-12 sm:w-12" src={icon} alt="" />
                         </span>

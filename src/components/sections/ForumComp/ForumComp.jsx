@@ -58,7 +58,7 @@ const ForumComp = ()=>{
             label ="Mari Berdiskusi Dengan Para Rangers"
             ket ="Tempat di mana ide-ide segar bertemu dengan pengetahuan mendalam
                 untuk membantu mengembangkan bisnis kamu"
-            to='/'
+            to='/forum'
         />
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12">
             <aside className="order-2 lg:order-1">

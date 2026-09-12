@@ -41,7 +41,7 @@ const Navbar = () => {
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/forum">Forum</Link></li>
                         <li><Link to="/blog">Blog</Link></li>
-                        <li>E-Commerce</li>
+                        <li><Link to="/E-commerce">E-Commerce</Link></li>
                     </ul>
                 </div>
                 <div className="flex gap-20">

@@ -62,24 +62,18 @@ const cart=[
 ]
 
 const ECommerceComp = ()=>{
-    return <section className="">
-    <div className="grid grid-cols-4 w-430 gap- p-5 ">
-    {cart.map((item)=>{
-        return <div className="w-80 h-115 bg-white shadow rounded-xl mb-10 mx-auto">
-                <div className="flex flex-col gap-5 justify-center items-center" key={item.id}>
-                    <img src={item.photo} alt={item.label} className="w-full"/>
-                    <div className="flex flex-col justify-center items-center">
-                        <h2 className="text-[14px] text-abu font-normal">{item.category}</h2>
-                        <h1 className="text-[18px] font-medium">{item.label}</h1>
-                    </div>
-                    <span className="font-semibold text-[20px]">{item.quantity}</span>
-                    <Button className="w-48.25 h-11 text-[14px]">+ Keranjang</Button>
+    return <section className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[...cart, ...cart.slice(0, 4)].map((item, index) => (
+            <article className="overflow-hidden rounded-lg bg-white shadow-[0_2px_8px_rgba(0,0,0,0.08)]" key={`${item.id}-${index}`}>
+                <img src={item.photo} alt={item.label} className="aspect-[281/223] w-full object-cover" />
+                <div className="flex min-h-[180px] flex-col items-center px-4 py-4 text-center">
+                    <h2 className="text-[16px] font-normal text-abu">{item.category}</h2>
+                    <h3 className="min-h-[42px] text-[18px] font-normal leading-tight">{item.label}</h3>
+                    <span className="mt-4 text-[20px] font-semibold">{item.quantity}</span>
+                    <Button className="mt-4 h-11 w-full max-w-[150px] rounded-md text-[14px]">+ Keranjang</Button>
                 </div>
-        </div>
-      
-    })}
-      </div> 
-       
+            </article>
+        ))}
     </section>
 }
 

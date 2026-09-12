@@ -1,6 +1,7 @@
 import Header from "../../ui/Header"
 import blog from "../../../assets/blog/blog.png"
 import profile from "../../../assets/blog/profile.png"
+import { Link } from "react-router-dom"
 
 const carts =[
     {
@@ -40,9 +41,11 @@ const BlogComp = ()=>{
                     untuk membantu mengembangkan bisnis kamu"
             to='/'
         />
+        
         <div className="flex gap-20 items-center justify-center">
+            
         {carts.map((item)=>{
-            return <div className="w-120 h-140 bg-white shadow-xl px-3 py-4 rounded-xl" key={item.id}>
+            return <Link to="/detail-blog"><div className="w-120 h-140 bg-white shadow-xl px-3 py-4 rounded-xl" key={item.id}>
             <img src={item.photo} alt="" className="mx-auto w-[90%]"/>
                 <div className="w-89 h-50 px-6 grid gap-4 mt-4">
                 <span className="text-md py-1 pl-2 text-button bg-amber-100 w-24.5 h-7 rounded-md">{item.category}</span>
@@ -54,10 +57,11 @@ const BlogComp = ()=>{
                 </div>
             </div>
 
-        </div>
+        </div></Link>
         })}
+
         </div>
-    
+            
     </section>
 }
 
